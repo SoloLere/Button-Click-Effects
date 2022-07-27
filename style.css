@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Nova+Mono&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+h3 {
+    font-family: 'Nova Mono', monospace;
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+    overflow: hidden;
+    --typewriter-speed: 4000ms;
+} 
+
+h3::before, h3::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0;
+    bottom: 0;
+} 
+
+h3::before {
+    /* --animation-style: linear; */
+    background-color: #000;
+    animation: typewriter var(--typewriter-speed) var(--animation-style) forwards;
+}
+
+h3::after {
+    background-color: #fff;
+    width:0.125em;
+    animation: typewriter var(--typewriter-speed) var(--animation-style) forwards;
+}
+
+@keyframes typewriter {
+    100% {
+        left: 100%;
+    }
+}
+
+button {
+    color: #fff;
+    background-color: purple;
+    border: 1px purple solid;
+    padding: 0.75rem 2rem;
+    margin: 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    overflow: hidden;
+    position: relative;
+    font-family: inherit;
+}
+
+button:active {
+    outline: none;
+}
+
+button .circle {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: scale 500ms ease-out;
+}
+
+@keyframes scale{ 
+    to {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+};
