@@ -1,88 +1,108 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Nova+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Nova+Mono&family=Muli&display=swap");
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #000;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    min-height: 100vh;
-    overflow: hidden;
+  background-color: #000;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 h3 {
-    font-family: 'Nova Mono', monospace;
-    color: #fff;
-    font-size: 18px;
-    position: relative;
-    overflow: hidden;
-    --typewriter-speed: 4000ms;
-} 
+  font-family: "Nova Mono", monospace;
+  color: #fff;
+  font-size: 18px;
+  position: relative;
+  overflow: hidden;
+  --typewriter-speed: 4000ms;
+}
 
-h3::before, h3::after {
-    content: '';
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0;
-    bottom: 0;
-} 
+h4 {
+    font-family: "Muli";
+    font-style: italic;
+  color: white;
+}
+
+h3::before,
+h3::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0;
+  bottom: 0;
+}
 
 h3::before {
-    /* --animation-style: linear; */
-    background-color: #000;
-    animation: typewriter var(--typewriter-speed) var(--animation-style) forwards;
+  /* --animation-style: linear; */
+  background-color: #000;
+  animation: typewriter var(--typewriter-speed) var(--animation-style) forwards;
 }
 
 h3::after {
-    background-color: #fff;
-    width:0.125em;
-    animation: typewriter var(--typewriter-speed) var(--animation-style) forwards;
+  background-color: #fff;
+  width: 0.125em;
+  animation: typewriter var(--typewriter-speed) var(--animation-style) forwards;
+}
+
+.header-small .span {
+    display: inline-block;
+    min-width: 5px;
+    font-size: 18px;
+    animation: wave 600ms cubic-bezier(0.68, -0.55, 0.27, 1.55) backwards;
 }
 
 @keyframes typewriter {
-    100% {
-        left: 100%;
-    }
+  100% {
+    left: 100%;
+  }
 }
 
 button {
-    color: #fff;
-    background-color: purple;
-    border: 1px purple solid;
-    padding: 0.75rem 2rem;
-    margin: 10px 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 14px;
-    overflow: hidden;
-    position: relative;
-    font-family: inherit;
+  color: #fff;
+  background-color: purple;
+  border: 1px purple solid;
+  padding: 0.75rem 2rem;
+  margin: 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  overflow: hidden;
+  position: relative;
+  font-family: inherit;
 }
 
 button:active {
-    outline: none;
+  outline: none;
 }
 
 button .circle {
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    background-color: #fff;
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    animation: scale 500ms ease-out;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: scale 500ms ease-out;
 }
 
-@keyframes scale{ 
-    to {
-        transform: translate(-50%, -50%) scale(3);
-        opacity: 0;
-    }
-};
+@keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+
+@keyframes wave {
+  100% {
+    transform: translateY(-15px);
+  }
+}

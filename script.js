@@ -1,6 +1,7 @@
 const header = document.querySelector("h3");
 const number = header.textContent.length;
 const buttons = document.querySelectorAll('.ripple')
+const header4 = document.querySelector('.header-small')
 
 header.style.setProperty("--animation-style", `steps(${number})`);
 buttons.forEach(button => {
@@ -24,3 +25,6 @@ buttons.forEach(button => {
 
   })
 })
+
+// console.log(header4.textContent.split('').join(''))
+header4.innerHTML = header4.textContent.split('').map((letter, index) => `<span class="span" style= "animation-delay: ${(index*100)+4000}ms;">${letter}</span>`).join('')
